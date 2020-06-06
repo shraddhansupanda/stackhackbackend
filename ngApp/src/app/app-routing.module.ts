@@ -4,6 +4,7 @@ import {EventsComponent} from './events/events.component'
 import { SpecialEventsComponent } from './special-events/special-events.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   {
     path:'events',
     component:EventsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'special',
